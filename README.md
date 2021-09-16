@@ -70,7 +70,7 @@
 
 ```
         $ python data_compress.py -h
-        
+
         Usage: 
 
         - Compressing all images in a folder
@@ -98,3 +98,56 @@
                                 the path of the output folder
         -v, --verbose         verbose (default=False)
 ```
+
+3. **data_split.py**
+
+This code takes the `npz` file at each filter, e.g. `data_128x128_g_originals.npz`, and splits the data into training and testing batches.
+
+10% of all galaxies with inclinations greater than 45 degrees are set aside for the testing purpose in file `<outFileRoot>test_000.npz`.
+
+The entire training set is also stored under the name of `<outFileRoot>train_000.npz`. To perform extra analysis (like bagging), sub-samples of the training set are generated, with the size of 67% of the entire training sample size. The number of sub-sample is set to m_iter=3, by default. Each of the sub-samples are stored in `<outFileRoot>train_<iter>.npz`, where `<outFileRoot>` is the root name of the output files, and `<iter>` is sub-sample iteration number.
+
+**Note** that sub-samples overlap as each contain 2/3 of the data drawn randomly from the mother sample, whereas the test sample doesn't overlap with any of the training sub-samples.
+
+```
+        $ python data_split.py -h
+        
+        Usage: 
+
+        - generating multiple data samples, each set is spitted to training/testing subsets
+        - testing sample doesn't overlap with any of the training samples
+
+        - How to run: 
+        
+            $ data_split.py -i <input_folder_path> -o <output_folder_path> -s <image_size> -n <m_iter> -v <verbose>
+
+            - m_iter is the number of subsamples, each with the size of 67% of the entire dataset
+        
+        - Example:
+            $ python data_split.py -i ./compressed/ -o samples/ -n 3 -v
+
+            - output format for 128x128 images:
+                - <band>_128x128_test_000.npz
+                - <band>_128x128_train_000.npz
+
+                - <band>_128x128_test_xxx.npz   (67% of data)
+                - <band>_128x128_train_xxx.npz  (67% of data)
+                where <xxx> is the iteration number. 
+
+        
+        - Author: "Ehsan Kourkchi"
+        - Copyright 2021
+
+
+        Options:
+        -h, --help            show this help message and exit
+        -i INFOLDER, --infolder=INFOLDER
+                                folder of resized images
+        -s SIZE, --size=SIZE  number of pixels on each side (e.g. 128)
+        -o OUTFOLDER, --outfolder=OUTFOLDER
+                                the path of the output folder
+        -n NITER, --niter=NITER
+                                number of iterations
+        -v, --verbose         verbose (default=False)
+```
+
