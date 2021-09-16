@@ -29,14 +29,14 @@ import numpy as np
 import imgaug as ia
 import imgaug.augmenters as iaa
 
-
+#################################################################
 def esn_shuffle(array, seed=None):
         if seed is not None:
             np.random.seed(seed)
         np.random.shuffle(array)
         return array
 
-
+#################################################################
 def train_test_creation(npzFile, outFileRoot, m_iter=3, verbose=False):
     '''
         npzFile: name of the input npz file that holds the original sample at each band (g, r, i, RGB)
@@ -134,7 +134,7 @@ def train_test_creation(npzFile, outFileRoot, m_iter=3, verbose=False):
         
     return pgcIDs_test, pgcIDs_train_list
 
-
+#################################################################
 def train_test_replication(npzFile, outFileRoot, pgcIDs_test, pgcIDs_train_list, verbose=False):
     
     m_iter = len(pgcIDs_train_list)

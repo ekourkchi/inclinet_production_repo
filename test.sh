@@ -7,3 +7,5 @@ python data_compress.py -i 128x128_g -o compressed -s 128 -v
 python data_compress.py -i 128x128_r -o compressed -s 128 -v
 python data_compress.py -i 128x128_i -o compressed -s 128 -v
 python data_compress.py -i 128x128_RGB -o compressed -s 128 -v
+
+python data_split.py -i ./compressed/ -o samples/ -n 3 -v
