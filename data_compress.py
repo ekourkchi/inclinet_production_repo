@@ -133,12 +133,14 @@ if __name__ == '__main__':
 
     if not os.path.exists(opts.infolder):
         print('Error with input folder: '+opts.infolder+" doesn't exist !!!")
+        sys.exit()
 
     if not os.path.exists(opts.outfolder):
         print('Error with output folder: '+opts.outfolder+" doesn't exist !!!")
+        sys.exit()
 
-    if True:# try:
+    try:
         main(opts.infolder, opts.size, opts.outfolder, verbose=opts.verbose)
-    # except:
-        # print("Error: use \"python "+sys.argv[0]+" -h\" for help ...  \n", file=sys.stderr)
+    except:
+        print("Error: use \"python "+sys.argv[0]+" -h\" for help ...  \n", file=sys.stderr)
 
