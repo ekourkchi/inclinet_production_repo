@@ -2,6 +2,12 @@
 
 ![ML_model_generation](https://user-images.githubusercontent.com/13570487/133544222-479ff447-34cd-4a5e-af1b-db8ffb83a68f.png)
 
+## Orchestration
+
+- **test.sh**
+    - This bash script runs the pipeline end-to-end from data preparation building the CNN models
+
+
 ## Main Components:
 
 1. **data_prep.py**
