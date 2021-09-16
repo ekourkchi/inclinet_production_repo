@@ -132,10 +132,10 @@ if __name__ == '__main__':
         print("------------------------------------")
 
     if not os.path.exists(opts.infolder):
-        print('Error: '+opts.infolder+" doesn't exist !!!")
+        print('Error with input folder: '+opts.infolder+" doesn't exist !!!")
 
     if not os.path.exists(opts.outfolder):
-        print('Error: '+opts.outfolder+" doesn't exist !!!")
+        print('Error with output folder: '+opts.outfolder+" doesn't exist !!!")
 
     if True:# try:
         main(opts.infolder, opts.size, opts.outfolder, verbose=opts.verbose)

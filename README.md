@@ -60,3 +60,35 @@
 ```
     
 
+2. **data_compress.py**
+    - compressing images of a folder that are all in the same size
+    - the output compressed file is provided in `npz` format
+
+
+        $ python data_compress.py -h
+        Usage: 
+
+        - Compressing all images in a folder
+        - all images must have have the same size provided in the command line
+        - make sure that the output folder exists, otherwise this code doesn't work
+
+        - How to run: 
+        
+            $ data_compress.py -i <input_folder_path> -o <output_folder_path> -s <image_size> -v <verbose>
+        
+        - Example:
+            $ python data_compress.py -i 128x128_RGB -o compressed -s 128 -v
+
+        
+        - Author: "Ehsan Kourkchi"
+        - Copyright 2021
+
+
+        Options:
+        -h, --help            show this help message and exit
+        -i INFOLDER, --infolder=INFOLDER
+                                folder of resized images
+        -s SIZE, --size=SIZE  number of pixels on each side (e.g. 128)
+        -o OUTFOLDER, --outfolder=OUTFOLDER
+                                the path of the output folder
+        -v, --verbose         verbose (default=False)
