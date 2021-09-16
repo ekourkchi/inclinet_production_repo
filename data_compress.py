@@ -84,16 +84,15 @@ def arg_parser():
     parser = OptionParser(usage="""\
 \n
  - Compressing all images in a folder
- - all images must have have the same size
+ - all images must have have the same size provided in the command line
  - make sure that the output folder exists, otherwise this code doesn't work
-
 
  - How to run: 
  
-    $ %prog -p <folder_path> -s <image_size> -v <verbose>
+    $ %prog -i <input_folder_path> -o <output_folder_path> -s <image_size> -v <verbose>
  
  - Example:
-    $ python data_prep.py -p ./galaxies/ -r d25x2_rot -c catalogs/catalog.csv -b gri -s 64 -v
+    $ python data_compress.py -i 128x128_RGB -o compressed -s 128 -v
 
    
  - Author: "Ehsan Kourkchi"
@@ -134,6 +133,9 @@ if __name__ == '__main__':
 
     if not os.path.exists(opts.infolder):
         print('Error: '+opts.infolder+" doesn't exist !!!")
+
+    if not os.path.exists(opts.outfolder):
+        print('Error: '+opts.outfolder+" doesn't exist !!!")
 
     if True:# try:
         main(opts.infolder, opts.size, opts.outfolder, verbose=opts.verbose)
