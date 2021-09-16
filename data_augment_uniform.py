@@ -182,7 +182,7 @@ def main(infolder, size, outfolder, m_iter=3, n_batches=3, batch_size=1000, verb
 
     pixels = str(size)+'x'+str(size)
 
-    for jj in range(m_iter):
+    for jj in range(m_iter+1):
 
         ## Importing all training samples
         data = np.load(infolder+'/RGB_'+pixels+'_train_'+'%03d'%(jj)+'.npz')

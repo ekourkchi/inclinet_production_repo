@@ -20,7 +20,11 @@ python data_compress.py -i 128x128_i -o compressed -s 128 -v
 python data_compress.py -i 128x128_RGB -o compressed -s 128 -v
 
 ## train/test splits
+## n is the number of data (sub-data) sets
 python data_split.py -i ./compressed/ -o samples/ -n 3 -v
 
 ## data augmentation (making the sample uniform over the full range of inclinations)
-python data_augment_uniform.py -i samples -o augmented -s 128 -n 3 -b 5 -v
+## add "-z 1000" in production phase
+## b is the number of traning batches 
+## colorful and grascale images are combine in each training batch
+python data_augment_uniform.py -i samples -o augmented -s 128 -n 3 -b 5 -z 3 -v
