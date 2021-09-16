@@ -1,5 +1,7 @@
 # inclinet_production_repo
 
+![ML_model_generation](https://user-images.githubusercontent.com/13570487/133544222-479ff447-34cd-4a5e-af1b-db8ffb83a68f.png)
+
 ## Main Components:
 
 1. data_prep.py
