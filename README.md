@@ -5,17 +5,17 @@
 ## Main Components:
 
 1. **data_prep.py**
-    - This code is mainly used to **downsize** images that are stored in a specifi folder.
+    - This code is mainly used to **downsize (downsample)** images that are stored in a specified folder.
     - The application of this code is represented by *green* arrows in the above block diagram.
     - The output folder is in the form of `<size>_<size>_<band>`
     - The output files are in `pgc<xxx>_<size>x<size>_<inc>.<band>.jpg` format.
-    - *inc* is the measured inlinclination of the galaxy taken from the `catalog.csv`
+    - *inc* is the measured inclinations of the galaxy taken from the `catalog.csv`
     - Further help on how to run this code becomes available using `-h` directive.
     - `python data_prep.py -h`
 
 ```    
         - Resizing the original images that reside in a specific folder (image_path), e.g. ./galaxies
-        - File names are formated as pgc<xxx>_<image_root>_<image_root>_<band>.png
+        - File names are formatted as pgc<xxx>_<image_root>_<image_root>_<band>.png
         - or pgc<xxx>_<image_root>_<image_root>_gri.sdss.jpg (directly from the SDSS server)
         - or pgc<xxx>_<image_root>_<image_root>_gri.jpg (processed locally)
         - <xxx> stands for the ID of galaxy
@@ -59,3 +59,4 @@
         -v, --verbose         verbose (default=False)
 ```
     
+

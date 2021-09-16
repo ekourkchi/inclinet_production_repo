@@ -172,7 +172,7 @@ def arg_parser():
     parser = OptionParser(usage="""\
 \n
  - Resizing the original images that reside in a specific folder (image_path), e.g. ./galaxies
- - File names are formated as pgc<xxx>_<image_root>_<image_root>_<band>.png
+ - File names are formatted as pgc<xxx>_<image_root>_<image_root>_<band>.png
  - or pgc<xxx>_<image_root>_<image_root>_gri.sdss.jpg (directly from the SDSS server)
  - or pgc<xxx>_<image_root>_<image_root>_gri.jpg (processed locally)
  - <xxx> stands for the ID of galaxy
