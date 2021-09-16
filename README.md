@@ -14,6 +14,10 @@
     - `python data_prep.py -h`
 
 ```    
+        $ python data_compress.py -h
+
+        Usage: 
+
         - Resizing the original images that reside in a specific folder (image_path), e.g. ./galaxies
         - File names are formatted as pgc<xxx>_<image_root>_<image_root>_<band>.png
         - or pgc<xxx>_<image_root>_<image_root>_gri.sdss.jpg (directly from the SDSS server)
@@ -66,6 +70,7 @@
 
 ```
         $ python data_compress.py -h
+        
         Usage: 
 
         - Compressing all images in a folder
