@@ -19,8 +19,6 @@ import scipy.misc as scimisc
 import scipy.ndimage
 
 
-
-
 ######################################
 ## This function allows to execute the OS commands
 def xcmd(cmd, verbose):

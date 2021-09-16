@@ -113,7 +113,7 @@ def train_test_creation(npzFile, outFileRoot, m_iter=3, verbose=False):
         labels_test_ = labels_train[idx][n:]
         pgcIDs_test_ = pgcIDs_train[idx][n:]
         
-        npzTrain = outFileRoot+'train_00'+str(jj+1)+'.npz'
+        npzTrain = outFileRoot+'train_'+'%03d'%(jj+1)+'.npz'
         np.savez_compressed(npzTrain, 
                             images=images_train_, 
                             labels=labels_train_, 
@@ -121,7 +121,7 @@ def train_test_creation(npzFile, outFileRoot, m_iter=3, verbose=False):
         if verbose: print('created ...', npzTrain)
         
         
-        npzTest = outFileRoot+'test_00'+str(jj+1)+'.npz'
+        npzTest = outFileRoot+'test_'+'%03d'%(jj+1)+'.npz'
         np.savez_compressed(npzTest, 
                             images=images_test_, 
                             labels=labels_test_, 
@@ -171,7 +171,7 @@ def train_test_replication(npzFile, outFileRoot, pgcIDs_test, pgcIDs_train_list,
     for jj in range(m_iter):
         
         idx = np.isin(pgcIDs_c, pgcIDs_train_list[jj])
-        npzTrain = outFileRoot+'train_00'+str(jj+1)+'.npz'
+        npzTrain = outFileRoot+'train_'+'%03d'%(jj+1)+'.npz'
         np.savez_compressed(npzTrain, 
                             images=images_c[idx], 
                             labels=labels_c[idx], 
@@ -180,7 +180,7 @@ def train_test_replication(npzFile, outFileRoot, pgcIDs_test, pgcIDs_train_list,
         
         
         idx = np.logical_not(np.isin(pgcIDs_c, pgcIDs_train_list[jj]))
-        npzTest = outFileRoot+'test_00'+str(jj+1)+'.npz'
+        npzTest = outFileRoot+'test_'+'%03d'%(jj+1)+'.npz'
         np.savez_compressed(npzTest, 
                             images=images_c[idx], 
                             labels=labels_c[idx], 
@@ -195,7 +195,6 @@ def train_test_replication(npzFile, outFileRoot, pgcIDs_test, pgcIDs_train_list,
     del pgcIDs_c
 
  ###############################################
-
 
 def main(infolder, size, outfolder, m_iter=3, verbose=False):
 

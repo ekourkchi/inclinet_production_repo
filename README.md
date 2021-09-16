@@ -149,3 +149,63 @@ The entire training set is also stored under the name of `<outFileRoot>train_000
         -v, --verbose         verbose (default=False)
 ```
 
+4. **data_augment_uniform.py**
+
+- Generating augmented samples with uniform distribution of inclination
+- The augmented samples are stored as batches for a later use in the training process
+    - The training batches are generated using this code. Each batch consists of the same number of grayscale and colorful images.
+    - Half of the grayscale images are inverted to avoid overfitting
+
+```
+    $ python data_augment_uniform.py -h
+
+    Usage: 
+
+    - Augmenting training sets and storing them on the disk to be used during the traning process
+    - Generating augmented samples with uniform distribution of inclinations 
+
+    - How to run: 
+    
+        $ data_augment_uniform.py -i <input_folder_path> -o <output_folder_path> -s <image_size> 
+            -n <m_iter> -b <n_batches> -z <batch_size> -v <verbose>
+
+        - m_iter is the number of subsamples, each with the size of 67% of the entire dataset
+        - All arrays of images are taken, and they are divided into the inclination bins of size 5, starting at 45 degrees. 
+        - Each of the 5-degree sub-samples are augmented separately
+        - <batch_size>=1000 means that each of the 5 degree intervals have 1,000 galaxies after the augmentation process.
+    
+    - Example:
+        $ python data_augment_uniform.py -i samples -o augmented -s 128 -n 3 -b 5 -v
+
+        - output format for 128x128 images:
+            - <band>_128x128_test_000.npz
+            - <band>_128x128_train_000.npz
+
+            - <band>_128x128_test_xxx.npz   (67% of data)
+            - <band>_128x128_train_xxx.npz  (67% of data)
+            where <xxx> is the iteration number. 
+
+    
+    - Author: "Ehsan Kourkchi"
+    - Copyright 2021
+
+
+    Options:
+    -h, --help            show this help message and exit
+    -i INFOLDER, --infolder=INFOLDER
+                            folder of resized images
+    -s SIZE, --size=SIZE  number of pixels on each side (e.g. 128)
+    -o OUTFOLDER, --outfolder=OUTFOLDER
+                            the path of the output folder
+    -n NITER, --niter=NITER
+                            number of iterations
+    -b NBATCH, --nbatch=NBATCH
+                            number of batches
+    -z BATCHSIZE, --batchsize=BATCHSIZE
+                                                The nominal size of batches
+                            within each 5 degrees of inclnation interval.
+                            Total size is estimated to be 18*batchsize in full
+                            production.
+    -v, --verbose         verbose (default=False)
+
+```
