@@ -4,8 +4,9 @@
 
 ## Main Components:
 
-1. data_prep.py
-    - This code is mainly used to downsize images that are stored in a specifi folder.
+1. **data_prep.py**
+    - This code is mainly used to **downsize** images that are stored in a specifi folder.
+    - The application of this code is represented by *green* arrows in the above block diagram.
     - The output folder is in the form of `<size>_<size>_<band>`
     - The output files are in `pgc<xxx>_<size>x<size>_<inc>.<band>.jpg` format.
     - *inc* is the measured inlinclination of the galaxy taken from the `catalog.csv`
