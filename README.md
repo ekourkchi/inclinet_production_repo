@@ -6,12 +6,10 @@
 
 1. **data_prep.py**
     - This code is mainly used to **downsize (downsample)** images that are stored in a specified folder.
-    - The application of this code is represented by *green* arrows in the above block diagram.
     - The output folder is in the form of `<size>_<size>_<band>`
     - The output files are in `pgc<xxx>_<size>x<size>_<inc>.<band>.jpg` format.
     - *inc* is the measured inclinations of the galaxy taken from the `catalog.csv`
     - Further help on how to run this code becomes available using `-h` directive.
-    - `python data_prep.py -h`
 
 ```    
         $ python data_compress.py -h
@@ -111,7 +109,7 @@ The entire training set is also stored under the name of `<outFileRoot>train_000
 
 ```
         $ python data_split.py -h
-        
+
         Usage: 
 
         - generating multiple data samples, each set is spitted to training/testing subsets
