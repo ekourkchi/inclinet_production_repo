@@ -64,7 +64,7 @@
     - compressing images of a folder that are all in the same size
     - the output compressed file is provided in `npz` format
 
-
+```
         $ python data_compress.py -h
         Usage: 
 
@@ -92,3 +92,4 @@
         -o OUTFOLDER, --outfolder=OUTFOLDER
                                 the path of the output folder
         -v, --verbose         verbose (default=False)
+```
