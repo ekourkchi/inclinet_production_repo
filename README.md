@@ -4,8 +4,8 @@
 
 ## Orchestration
 
-- [test.sh](https://github.com/ekourkchi/inclinet_production_repo/blob/main/test.sh)
-    - This bash script runs the pipeline end-to-end from data preparation building the CNN models
+- [pipeline.sh](https://github.com/ekourkchi/inclinet_production_repo/blob/main/test.sh)
+    - This bash script runs the pipeline end-to-end from the data preparation to building the CNN models
 
 
 ## Main Components:
