@@ -10,9 +10,7 @@
     - Further help on how to run this code becomes available using `-h` directive.
     - `python data_prep.py -h`
 
-    
-            Usage: 
-
+```    
         - Resizing the original images that reside in a specific folder (image_path), e.g. ./galaxies
         - File names are formated as pgc<xxx>_<image_root>_<image_root>_<band>.png
         - or pgc<xxx>_<image_root>_<image_root>_gri.sdss.jpg (directly from the SDSS server)
@@ -56,5 +54,5 @@
         -b BAND, --band=BAND   waveband, e.g. "g", "r", or  "i"
         -s SIZE, --size=SIZE  number of pixels on each side (e.g. 128)
         -v, --verbose         verbose (default=False)
-
+```
     
