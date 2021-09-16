@@ -10,7 +10,7 @@
     - Further help on how to run this code becomes available using `-h` directive.
     - `python data_prep.py -h`
 
-    '''
+    '
         Usage: 
 
         - Resizing the original images that reside in a specific folder (image_path), e.g. ./galaxies
@@ -57,4 +57,4 @@
         -s SIZE, --size=SIZE  number of pixels on each side (e.g. 128)
         -v, --verbose         verbose (default=False)
 
-    '''
+    '
