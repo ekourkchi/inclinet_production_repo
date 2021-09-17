@@ -215,3 +215,60 @@ The entire training set is also stored under the name of `<outFileRoot>train_000
     -v, --verbose         verbose (default=False)
 
 ```
+
+5. **batch_training_regr.py**
+
+```
+        $ python batch_training_regr.py -h
+
+        Usage: 
+
+        - Training a VGG model using the augmented data. 
+        - Data augmentation has been done separately in another code and the output data has been stored on disk for this purpose
+
+        - How to run: 
+        
+            $ batch_training_regr.py -a <augmented_images_folder> -i <resized_images_path>
+                -s <image_size> -o <output_models_path> -m <model_name_to_train>
+                -n <m_iter> -b <n_batches> -N <totl_coverage_of_batches>
+                -z <training_batch_size> -v <verbose>
+
+            - m_iter is the number of subsamples, each with the size of 67% of the entire dataset
+            - n_batches is the number of augmented batches as stored in npz format
+            - totl_coverage_of_batches is the total number of repetition over all batches
+            - output_models_path is the folder to save the weight numbers of the network after each iteration
+
+        - Example:
+            $ python batch_training_regr.py         -a augmented -i samples -s 128         -o models -m model4 -n 3 -b 3 -N 1 -z 64 -v
+
+            - outputs are model snapshots (weight numbers) and evaluation metrics:
+                - <output_models_path>/Uset_<m_iter>_<model_name>_ckpt
+                - <output_models_path>/***.json  (training/testing metrics)
+                - <output_models_path>/***.jpg   (a figure plotting metrics vs. epoch number)
+
+        
+        - Author: "Ehsan Kourkchi"
+        - Copyright 2021
+
+
+        Options:
+        -h, --help            show this help message and exit
+        -a AUGMENTED, --augmented=AUGMENTED
+                                folder of augmented images
+        -i SAMPLES, --samples=SAMPLES
+                                folder of resized images
+        -s SIZE, --size=SIZE  number of pixels on each side (e.g. 128)
+        -o OUTMODELS, --outModels=OUTMODELS
+                                the path of the output folder to store models
+        -m MODELNAME, --modelName=MODELNAME
+                                name of the model (e.g. model4)
+        -n NITER, --niter=NITER
+                                number of data subsets
+        -b NBATCH, --nbatch=NBATCH
+                                number of batches (stored npz files)
+        -N N_BATCH_ITER, --N_batch_iter=N_BATCH_ITER
+                                total number of iterations over all stored bath files
+        -z TRAINING_BATCH_SIZE, --training_batch_size=TRAINING_BATCH_SIZE
+                                                    Batch size at each epoch.
+        -v, --verbose         verbose (default=False)
+```

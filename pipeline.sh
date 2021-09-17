@@ -1,7 +1,9 @@
 
+## clean-up, removing the products of the past executions
 rm -rf compressed
 rm -rf samples
 rm -rf augmented
+rm -rf models
 mkdir samples
 mkdir compressed
 mkdir augmented
@@ -28,3 +30,4 @@ python data_split.py -i ./compressed/ -o samples/ -n 3 -v
 ## b is the number of traning batches 
 ## colorful and grascale images are combine in each training batch
 python data_augment_uniform.py -i samples -o augmented -s 128 -n 3 -b 5 -z 3 -v
+
