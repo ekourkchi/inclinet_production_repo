@@ -6,7 +6,7 @@
 
 - [pipeline.sh](https://github.com/ekourkchi/inclinet_production_repo/blob/main/pipeline.sh)
     - This bash script runs the pipeline end-to-end from the data preparation to building the CNN models
-    - To run this code, execute the following command in your terminal
+    - To run the pipeline end-to-end, execute the following command in your terminal
 ```
         $ sh pipeline.sh > pipeline.log
 ```
@@ -158,6 +158,9 @@ The entire training set is also stored under the name of `<outFileRoot>train_000
                                 number of iterations
         -v, --verbose         verbose (default=False)
 ```
+
+![example_metric_plots](https://user-images.githubusercontent.com/13570487/133723508-edd40684-a207-4227-a429-ac5aa8940dad.png)
+
 
 4. **data_augment_uniform.py**
 
