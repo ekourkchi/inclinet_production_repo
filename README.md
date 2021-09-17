@@ -12,6 +12,9 @@
 ```
 
 
+![pipeline](https://user-images.githubusercontent.com/13570487/133752460-b37f96b1-763b-4dd1-8521-803adbdd49d1.png)
+
+
 ## Main Components:
 
 1. **data_prep.py**
