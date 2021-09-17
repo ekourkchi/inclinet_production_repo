@@ -159,9 +159,6 @@ The entire training set is also stored under the name of `<outFileRoot>train_000
         -v, --verbose         verbose (default=False)
 ```
 
-![example_metric_plots](https://user-images.githubusercontent.com/13570487/133723508-edd40684-a207-4227-a429-ac5aa8940dad.png)
-
-
 4. **data_augment_uniform.py**
 
 - Generating augmented samples with uniform distribution of inclination
@@ -222,6 +219,9 @@ The entire training set is also stored under the name of `<outFileRoot>train_000
     -v, --verbose         verbose (default=False)
 
 ```
+
+![example_metric_plots](https://user-images.githubusercontent.com/13570487/133723508-edd40684-a207-4227-a429-ac5aa8940dad.png)
+
 
 5. **batch_training_regr.py**
 
