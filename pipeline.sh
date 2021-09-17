@@ -31,3 +31,8 @@ python data_split.py -i ./compressed/ -o samples/ -n 3 -v
 ## colorful and grascale images are combine in each training batch
 python data_augment_uniform.py -i samples -o augmented -s 128 -n 3 -b 5 -z 3 -v
 
+## Batch Training
+python batch_training_regr.py -a augmented -i samples -s 128 -o models -m model4 -n 3 -b 5 -N 1 -v
+python batch_training_regr.py -a augmented -i samples -s 128 -o models -m model5 -n 3 -b 5 -N 1 -v
+python batch_training_regr.py -a augmented -i samples -s 128 -o models -m model6 -n 3 -b 5 -N 1 -v
+

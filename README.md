@@ -6,6 +6,10 @@
 
 - [pipeline.sh](https://github.com/ekourkchi/inclinet_production_repo/blob/main/pipeline.sh)
     - This bash script runs the pipeline end-to-end from the data preparation to building the CNN models
+    - To run this code, execute the following command in your terminal
+```
+        $ sh pipeline.sh > pipeline.log
+```
 
 
 ## Main Components:
