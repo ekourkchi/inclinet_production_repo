@@ -218,6 +218,21 @@ The entire training set is also stored under the name of `<outFileRoot>train_000
 
 5. **batch_training_regr.py**
 
+Switching to higher resolution images, and added augmentation of top of that, the size of required memory to open up the entire augmented sample is out of the capability of the available machines. Thus, we resolved the problem by saving the training sample in 50 separate batches all already randomized in any way. Each step of the training process starts with loading the corresponding batch, reconstructing the CNN as it was generated in the previous iteration, and advancing the training process for on more step. At the end of that repetition, we store a snapshot of the network weights for the next training step.
+
+- Training VGG models using the augmented data
+- Training Process
+    - Advancing the training process at each step consists of
+        - Reconstruction of the model as it is at the end of the previous step
+        - Reading the npz file that holds the corresponding batch
+        - Training the model for one epoch (moving forward just for 1 iteration)
+        - Updating the JSON file that contains the desired network metrics
+        - Saving the weight values of the model for the use in the next iteration
+- Notes
+    - Since we are dealing with a large training sample, we need to repeat updating the network weights for many steps to cover all training batches several times
+    - Over-fitting sometimes helps to minimize the prediction-measurement bias
+
+
 ```
         $ python batch_training_regr.py -h
 
