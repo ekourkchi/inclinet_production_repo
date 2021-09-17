@@ -15,7 +15,7 @@
 ![pipeline](https://user-images.githubusercontent.com/13570487/133752460-b37f96b1-763b-4dd1-8521-803adbdd49d1.png)
 
 **Related information**
-- For furhter detail on various VGG models we considered in this project [click here](https://github.com/ekourkchi/incNET-data/tree/master/incNET_VGGcnn_withAugmentation).
+- For furhter details on various VGG models we considered in this project [click here](https://github.com/ekourkchi/incNET-data/tree/master/incNET_VGGcnn_withAugmentation).
 - [Visit here](https://github.com/ekourkchi/inclinet_production_repo/blob/main/Inclinet_Deployment_Architecture.pdf) to get the full picture of the deployment plan.
 - [Project proposal and motivations](https://github.com/ekourkchi/incNET-data)
 - [Data Preprocessing](https://github.com/ekourkchi/incNET-data/blob/master/incNET_dataPrep/incNET_dataClean.ipynb) to get reliable labels
@@ -270,7 +270,10 @@ Switching to higher resolution images, and added augmentation of top of that, th
             - output_models_path is the folder to save the weight numbers of the network after each iteration
 
         - Example:
-            $ python batch_training_regr.py         -a augmented -i samples -s 128         -o models -m model4 -n 3 -b 3 -N 1 -z 64 -v
+            $ python batch_training_regr.py  \
+                -a augmented -i samples -s 128 \
+                -o models -m model4 \
+                -n 3 -b 3 -N 1 -z 64 -v
 
             - outputs are model snapshots (weight numbers) and evaluation metrics:
                 - <output_models_path>/Uset_<m_iter>_<model_name>_ckpt
